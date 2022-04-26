@@ -1,24 +1,71 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![](https://img.shields.io/static/v1?label=BY&message=JohnFTitor&color=blue)
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-Things you may want to cover:
+## My Blog App
 
-* Ruby version
+> First Ruby on Rails project. This is a basic Blog website that allows users to create, edit, comment and delete posts, keeping data in a database. This project is aimed to understand the concepts of Rails while at the same time develop a Full-Stack project.   
 
-* System dependencies
+### Requirements
+In order to work on this project, you need to have the following dependencies installed: 
 
-* Configuration
+- [Ruby](https://www.ruby-lang.org/en/) 
+- [Postgresql](https://www.postgresql.org/)
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/)
+- [Rails](https://rubyonrails.org/)
 
-* Database creation
+## Built With
 
-* Database initialization
+- Languages: _**Ruby**_
+- Frameworks: _**Ruby On Rails**_
+- Technologies used: _**Visual Studio Code**_
 
-* How to run the test suite
+## Getting Started
 
-* Services (job queues, cache servers, search engines, etc.)
+### Clone this repository
 
-* Deployment instructions
+```bash
+$ git clone git@github.com:JohnFTitor/my_blog_app.git
+$ cd my_blog_app
+```
 
-* ...
+### Commands to run
+
+Run 
+```bash
+$ bundle install 
+```
+
+To get all the gems required for the project
+
+Then, run
+
+```bash
+$ npm install 
+```
+To install packages such as style linters
+
+To check linters locally, use
+```bash
+$ rubocop
+$ npx stylelint "**/*.{css,scss}"
+```
+
+## Authors
+
+:bust_in_silhouette: **Andrés Felipe Arroyave Naranjo**
+
+ Platform | Badge |
+ --- | --- |
+ **GitHub**    | [@JohnFTitor](https://github.com/JohnFTitor)
+ **Twitter**   | [@johnftitor](https://twitter.com/johnftitor)
+ **LinkedIn**  | [Andres](https://www.linkedin.com/in/andresarroyavenaranjo/?locale=en_US)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
