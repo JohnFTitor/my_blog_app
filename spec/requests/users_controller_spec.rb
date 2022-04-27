@@ -2,6 +2,12 @@ require 'rails_helper'
 
 RSpec.describe "UsersControllers", type: :request do
   describe "GET /index" do
+    it 'is the root of the website' do 
+      get '/'
+      expect(response).to have_http_status(:ok)
+      expect(response).to render_template(:index)
+    end
+
     it 'has a success status' do 
       get '/users'
       expect(response).to have_http_status(:ok)
