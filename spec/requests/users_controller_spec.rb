@@ -38,7 +38,7 @@ RSpec.describe "UsersControllers", type: :request do
 
       it "doesn't render other template" do 
         get '/users/2'
-        expect(response).to render_template(:show)
+        expect(response).to_not render_template(:index)
       end
     end
 
