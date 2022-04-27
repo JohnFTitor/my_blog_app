@@ -1,3 +1,50 @@
+GIT
+  remote: https://github.com/rspec/rspec-core.git
+  revision: bc9bb2da423b2cf6b7e53f1307c3ef2d24fceb7b
+  branch: main
+  specs:
+    rspec-core (3.12.0.pre)
+      rspec-support (= 3.12.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-expectations.git
+  revision: 5f17020265ce71cd6a221bd2c7b5d67cff5f22e1
+  branch: main
+  specs:
+    rspec-expectations (3.12.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.12.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-mocks.git
+  revision: d8256aa5eadffa8d3cb59dffc66a653d3e287064
+  branch: main
+  specs:
+    rspec-mocks (3.12.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.12.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-rails.git
+  revision: d55643592e4c28ba8ebe98e2c765a1a9f982322e
+  branch: main
+  specs:
+    rspec-rails (6.0.0.pre)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (= 3.12.0.pre)
+      rspec-expectations (= 3.12.0.pre)
+      rspec-mocks (= 3.12.0.pre)
+      rspec-support (= 3.12.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-support.git
+  revision: 5fdadceffbd87962ce3f5152c28e968152d89d30
+  branch: main
+  specs:
+    rspec-support (3.12.0.pre)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -88,6 +135,7 @@ GEM
     debug (1.5.0)
       irb (>= 1.3.6)
       reline (>= 0.2.7)
+    diff-lcs (1.5.0)
     digest (3.1.0)
     erubi (1.10.0)
     globalid (1.0.0)
@@ -237,6 +285,11 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.3)
+  rspec-core!
+  rspec-expectations!
+  rspec-mocks!
+  rspec-rails!
+  rspec-support!
   rubocop (>= 1.0, < 2.0)
   selenium-webdriver
   sprockets-rails
