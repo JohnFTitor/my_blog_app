@@ -8,5 +8,7 @@ class Post < ApplicationRecord
     user.update(posts_counter: count)
   end
 
-  scope :recent_comments, -> (post) { post.comments.order(created_at: :desc).limit(5) }
+  def recent_comments 
+    self.comments.order(created_at: :desc).limit(5)
+  end
 end
