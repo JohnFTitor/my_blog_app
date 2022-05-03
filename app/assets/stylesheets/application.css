@@ -18,8 +18,17 @@ html {
   font-size: 10px;
 }
 
+body {
+  padding: 30px 50px;
+}
+
+li {
+  list-style: none;
+}
+
 .user-cards {
   display: flex;
+  width: 100%;
   flex-direction: column;
   gap: 30px;
 }

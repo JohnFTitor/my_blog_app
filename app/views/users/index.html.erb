@@ -1,5 +1,7 @@
 <ul class="user-cards">
   <% @users.each do |user| %>
+  <li>
     <%= render 'partials/card', user: user%>
+  </li>
   <% end %>
 </ul> 
