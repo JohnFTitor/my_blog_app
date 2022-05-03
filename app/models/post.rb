@@ -3,9 +3,12 @@ class Post < ApplicationRecord
   has_many :likes
   has_many :comments
 
-  def self.update_count(user)
-    count = user.posts.count
-    user.update(posts_counter: count)
+  after_create do 
+    author.increment!(:posts_counter)
+  end
+
+  after_destroy do
+    author.decrement!(:posts_counter)
   end
 
   def recent_comments
