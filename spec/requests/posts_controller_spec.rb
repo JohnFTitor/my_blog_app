@@ -12,7 +12,7 @@ RSpec.describe 'PostsControllers', type: :request do
     Comment.create(id: 1, author: user, post: post1, text: 'comment-1')
     Comment.create(id: 2, author: user, post: post2, text: 'comment-2')
   end
-  
+
   describe 'GET /index' do
     it 'has a success status' do
       get '/users/2/posts'
@@ -35,7 +35,7 @@ RSpec.describe 'PostsControllers', type: :request do
       expect(assigns(:user).id).to eq(2)
     end
 
-    it 'should have three posts' do 
+    it 'should have three posts' do
       get '/users/2/posts'
       expect(assigns(:posts).length).to eq(3)
     end
@@ -45,13 +45,13 @@ RSpec.describe 'PostsControllers', type: :request do
       expect(response.body).to include('test 1')
     end
 
-    it 'has posts rendered' do 
+    it 'has posts rendered' do
       get '/users/2/posts'
       expect(response.body).to include('Post title-1')
       expect(response.body).to include('Post title-2')
     end
 
-    it 'has comments rendered' do 
+    it 'has comments rendered' do
       get '/users/2/posts'
       expect(response.body).to include('comment-1')
       expect(response.body).to include('comment-2')
@@ -92,7 +92,7 @@ RSpec.describe 'PostsControllers', type: :request do
       expect(response.body).to include('Post title-1')
     end
 
-    it 'has specific comments rendered' do 
+    it 'has specific comments rendered' do
       get '/users/2/posts/1'
       expect(response.body).to include('comment-1')
       expect(response.body).to_not include('comment-2')
