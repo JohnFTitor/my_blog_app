@@ -1,6 +1,6 @@
 <div class="card-info">
   <h3> <%= post.title %> </h3>
-  <p> <%= post.text %> </p>
+  <p><%= post.text.length > 150 ? "#{post.text[0,150]}..." : post.text %></p>
   <p class="placeholder stats"> Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
 </div>
 
