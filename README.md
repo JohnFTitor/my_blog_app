@@ -52,6 +52,21 @@ $ rubocop
 $ npx stylelint "**/*.{css,scss}"
 ```
 
+Once you have the project correctly set up, run 
+```bash
+$ bin/rails db:setup
+```
+
+To run all migrations, create the database for testing and for development, and insert some data into the database for you to visualize the changes
+
+Finally, each time you make changes to the project, run 
+
+```bash
+$ bundle exec rspec /spec
+```
+
+In the root folder to check the consistency of the app. Please don't make changes to the tests unless completely necessary, and mention it in your PR description. 
+
 ## Authors
 
 :bust_in_silhouette: **Andrés Felipe Arroyave Naranjo**
