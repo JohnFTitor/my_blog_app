@@ -1,6 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe 'PostsControllers', type: :request do
+  before :all do
+    Comment.destroy_all
+    Post.destroy_all
+    User.destroy_all
+    user = User.create(id: 2, name: 'test 1', photo: 'photo 1', bio: 'text 1')
+    post1 = Post.create(id: 1, author: user, title: 'Post title-1', text: 'Some text')
+    post2 = Post.create(id: 2, author: user, title: 'Post title-2', text: 'Some text')
+    Post.create(id: 3, author: user, title: 'Post title-3', text: 'Some text')
+    Comment.create(id: 1, author: user, post: post1, text: 'comment-1')
+    Comment.create(id: 2, author: user, post: post2, text: 'comment-2')
+  end
+  
   describe 'GET /index' do
     it 'has a success status' do
       get '/users/2/posts'
@@ -18,14 +30,31 @@ RSpec.describe 'PostsControllers', type: :request do
       end
     end
 
-    it 'assings user_id to local variable' do
+    it 'assings user to local variable' do
       get '/users/2/posts'
-      expect(assigns(:user_id)).to eq('2')
+      expect(assigns(:user).id).to eq(2)
     end
 
-    it 'has index placeholder' do
+    it 'should have three posts' do 
       get '/users/2/posts'
-      expect(response.body).to include('Displays list of posts for user number: 2')
+      expect(assigns(:posts).length).to eq(3)
+    end
+
+    it 'has user card' do
+      get '/users/2/posts'
+      expect(response.body).to include('test 1')
+    end
+
+    it 'has posts rendered' do 
+      get '/users/2/posts'
+      expect(response.body).to include('Post title-1')
+      expect(response.body).to include('Post title-2')
+    end
+
+    it 'has comments rendered' do 
+      get '/users/2/posts'
+      expect(response.body).to include('comment-1')
+      expect(response.body).to include('comment-2')
     end
   end
 

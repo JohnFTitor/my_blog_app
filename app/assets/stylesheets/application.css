@@ -65,6 +65,7 @@ button:hover {
   width: 100%;
   flex-direction: column;
   gap: 30px;
+  margin-top: 20px;
 }
 
 .user {

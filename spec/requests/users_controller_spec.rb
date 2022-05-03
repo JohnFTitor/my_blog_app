@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'UsersControllers', type: :request do
   before :all do
+    Comment.destroy_all
     Post.destroy_all
     User.destroy_all
     User.create(id: 1, name: 'test 1', photo: 'photo 1', bio: 'text 1')
