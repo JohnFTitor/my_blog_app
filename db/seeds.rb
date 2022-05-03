@@ -42,7 +42,7 @@ end
 end
   
 (1..200).each do |id|
-  Comment.create(post: Post.find(rand(1..100)), author: User.find(rand(1..20)), text: "This is comment ##{id} made by ##{User.find(rand(1..20)).name}")
+  Comment.create(post: Post.find(rand(1..100)), author: User.find(rand(1..20)), text: "This is comment ##{id}")
 end
 
 (1..200).each do 

@@ -5,6 +5,8 @@ class Post < ApplicationRecord
 
   after_create do
     author.increment!(:posts_counter)
+    update(comments_counter: 0)
+    update(likes_counter: 0)
   end
 
   after_destroy do

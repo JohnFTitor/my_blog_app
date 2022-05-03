@@ -2,14 +2,15 @@
   <%= render 'partials/card', user: @user %>
   <ul class="cards">
     <% @posts.each do |post| %>
-      <li>
+      <li class="post-comment">
         <%= render 'partials/post_card', post: post %>
         <div class="card-info">
-          <% post.comments.each do |comment| %>
+          <% post.recent_comments.each do |comment| %>
             <p> <%= comment.author.name%>: <%= comment.text%><p>
           <% end %>  
         </div>
       </li>
     <% end %>
   </ul>
+  <button> Pagination </button>
 </div>
