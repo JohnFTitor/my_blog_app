@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe 'UsersControllers', type: :request do
+  before :all do
+    User.destroy_all 
+    User.create(id: 1, name: 'test 1', photo: 'photo 1', bio: 'text 1')
+    User.create(id: 2, name: 'test 2', photo: 'photo 2', bio: 'text 2')
+    User.create(id: 3, name: 'test 3', photo: 'photo 3', bio: 'text 3')
+  end
+
   describe 'GET /index' do
     it 'is the root of the website' do
       get '/'
@@ -24,9 +31,14 @@ RSpec.describe 'UsersControllers', type: :request do
       end
     end
 
-    it 'has index placeholder' do
+    it 'assings users to local variable' do
       get '/users'
-      expect(response.body).to include('List all users')
+      expect(assigns(:users)).to_not be_nil
+    end
+
+    it 'should have a local variable with a length of three' do 
+      get '/users'
+      expect(assigns(:users).length).to eq(3)
     end
   end
 
