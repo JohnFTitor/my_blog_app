@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe 'UsersControllers', type: :request do
   before :all do
     Post.destroy_all
-    User.destroy_all 
+    User.destroy_all
     User.create(id: 1, name: 'test 1', photo: 'photo 1', bio: 'text 1')
     User.create(id: 2, name: 'test 2', photo: 'photo 2', bio: 'text 2')
-    user_3 = User.create(id: 3, name: 'test 3', photo: 'photo 3', bio: 'text 3')
-    Post.create(author: user_3, title: 'Post title', text: 'Some text')
+    user3 = User.create(id: 3, name: 'test 3', photo: 'photo 3', bio: 'text 3')
+    Post.create(author: user3, title: 'Post title', text: 'Some text')
   end
 
   describe 'GET /index' do
@@ -44,7 +44,7 @@ RSpec.describe 'UsersControllers', type: :request do
       expect(assigns(:users)).to_not be_nil
     end
 
-    it 'should have a local variable with a length of three' do 
+    it 'should have a local variable with a length of three' do
       get '/users'
       expect(assigns(:users).length).to eq(3)
     end
@@ -80,7 +80,7 @@ RSpec.describe 'UsersControllers', type: :request do
       expect(response.body).to_not include('text 3')
     end
 
-    it 'Contains user post' do 
+    it 'Contains user post' do
       get '/users/3'
       expect(response.body).to include('Post title')
     end

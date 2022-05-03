@@ -6,56 +6,29 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-first_user = User.create(name: 'Tom',
-  photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-  bio: 'Teacher from Mexico.')
-second_user = User.create(name: 'Lilly',
-  photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-  bio: 'Teacher from Poland.')
+(1..20).each do |id| 
+  User.create(name: "User-#{id}",
+    photo: 'https://i.pinimg.com/originals/d8/19/30/d81930b4ed6e0702d4daf02aae30b4da.png',
+    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut leo at diam consectetur lacinia. 
+    Sed tincidunt sagittis interdum. Praesent et sollicitudin velit, nec eleifend leo. In porta quam eget libero 
+    efficitur fringilla. Etiam eget ornare dolor, eget mattis sem. Nulla tempor turpis fermentum nisi faucibus 
+    iaculis. Donec at sapien nunc. Sed cursus dolor at lobortis gravida. Curabitur in mollis mi. Proin purus sem, 
+    placerat at lacus sed, facilisis molestie sapien. Fusce at ultricies mauris, id dapibus risus. Aliquam erat volutpat.")
+end
 
-User.create(name: 'User-1',
-  photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-  bio: 'Teacher from Poland.')
-User.create(name: 'User-2',
-  photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-  bio: 'Teacher from Poland.')
-User.create(name: 'User-3',
-  photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-  bio: 'Teacher from Poland.')
-User.create(name: 'User-4',
-  photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-  bio: 'Teacher from Poland.')
-User.create(name: 'User-5',
-  photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-  bio: 'Teacher from Poland.')
-User.create(name: 'User-6',
-  photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-  bio: 'Teacher from Poland.')
-User.create(name: 'User-7',
-  photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-  bio: 'Teacher from Poland.')
-User.create(name: 'User-8',
-  photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-  bio: 'Teacher from Poland.')
-User.create(name: 'User-9',
-  photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-  bio: 'Teacher from Poland.')
+(1..100).each do |id|
+  Post.create(author: User.find(rand(1..20)), title: "Post ##{id}", 
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut leo at diam consectetur lacinia. 
+  Sed tincidunt sagittis interdum. Praesent et sollicitudin velit, nec eleifend leo. In porta quam eget libero 
+  efficitur fringilla. Etiam eget ornare dolor, eget mattis sem. Nulla tempor turpis fermentum nisi faucibus 
+  iaculis. Donec at sapien nunc. Sed cursus dolor at lobortis gravida. Curabitur in mollis mi. Proin purus sem, 
+  placerat at lacus sed, facilisis molestie sapien. Fusce at ultricies mauris, id dapibus risus. Aliquam erat volutpat." )
+end
+  
+(1..200).each do |id|
+  Comment.create(post: Post.find(rand(1..100)), author: User.find(rand(1..20)), text: "This is comment ##{id} made by ##{User.find(rand(1..20)).name}")
+end
 
-first_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post')
-second_post = Post.create(author: first_user, title: 'Hello', text: 'This is my second post')
-third_post = Post.create(author: second_user, title: 'Hello', text: 'This is my third post')
-fourth_post = Post.create(author: second_user, title: 'Hello', text: 'This is my fourth post')  
-fifth_post = Post.create(author: second_user, title: 'Hello', text: 'This is my fifth post')
-six_post = Post.create(author: second_user, title: 'Hello', text: 'This is my sixth post')  
-
-Comment.create(post: first_post, author: second_user, text: 'Hi Tom!' )
-Comment.create(post: first_post, author: second_user, text: 'Hi Billy!' )
-Comment.create(post: first_post, author: second_user, text: 'Hi Jimmy!' )
-Comment.create(post: first_post, author: second_user, text: 'Hi Mike!' )
-Comment.create(post: first_post, author: first_user, text: 'Hi Elizabeth!' )
-Comment.create(post: first_post, author: first_user, text: 'Hi Mark!' )
-
-Like.create(post: first_post, author: second_user)
-Like.create(post: first_post, author: first_user)
-Like.create(post: second_post, author: second_user)
-Like.create(post: second_post, author: first_user)
+(1..200).each do 
+  Like.create(post: Post.find(rand(1..100)), author: User.find(rand(1..20)))
+end
