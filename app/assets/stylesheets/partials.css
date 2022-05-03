@@ -13,7 +13,7 @@
   width: 100%;
   max-width: 1200px;
   box-sizing: border-box;
-  border: 1px solid black;
+  border: 2px solid black;
   padding: 50px;
   white-space: pre-line;
 }
@@ -23,6 +23,11 @@
   margin: 0;
   right: 30px;
   bottom: 15px;
+}
+
+.placeholder-top {
+  bottom: none;
+  top: 15px;
 }
 
 .stats {

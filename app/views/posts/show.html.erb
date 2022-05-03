@@ -1,1 +1,12 @@
-<h1> Shows post number: <%= @post_id%> of user number: <%= @user_id%></h1>
+<div class="posts">
+  <div class="card-info">
+    <h3> <%=@post.title%> by <%= @user.name%> </h3>
+    <p> <%= @post.text%> </p>
+    <p class="placeholder stats placeholder-top"> Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %> </p>
+  </div>
+  <div class="card-info">
+    <% @post.comments.each do |comment| %>
+      <p> <%= comment.author.name%>: <%= comment.text%><p>
+    <% end %>  
+  </div>
+</div>
