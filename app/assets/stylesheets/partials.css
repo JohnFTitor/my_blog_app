@@ -1,0 +1,42 @@
+.card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.card-info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 160px;
+  max-width: 900px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  padding: 30px;
+}
+
+.card-info h2 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.card-info p {
+  position: absolute;
+  margin: 0;
+  right: 30px;
+  bottom: 30px;
+  font-size: 2.5rem;
+}
+
+.image-container {
+  height: 200px;
+  width: 200px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

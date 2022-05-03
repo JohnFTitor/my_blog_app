@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+  font-size: 10px;
+}
+
+.user-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}

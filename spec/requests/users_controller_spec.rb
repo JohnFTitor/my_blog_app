@@ -29,7 +29,7 @@ RSpec.describe 'UsersControllers', type: :request do
         get '/users'
         expect(response).to_not render_template(:show)
       end
-      it 'should contain info off all users' do
+      it 'should contain info of all users' do
         get '/users'
         expect(response.body).to include('test 1')
         expect(response.body).to include('test 2')
