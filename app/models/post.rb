@@ -13,9 +13,9 @@ class Post < ApplicationRecord
     comments.order(created_at: :desc).limit(5)
   end
 
-  private 
+  private
 
-  def initialize_values 
+  def initialize_values
     author.increment!(:posts_counter)
     update(comments_counter: 0)
     update(likes_counter: 0)
