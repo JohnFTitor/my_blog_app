@@ -1,12 +1,10 @@
 <div class="posts">
-  <div class="card-info">
+  <div class="card-info post">
     <h3> <%=@post.title%> by <%= @user.name%> </h3>
     <p> <%= @post.text%> </p>
     <p class="placeholder stats placeholder-top"> Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %> </p>
   </div>
   <div class="card-info">
-    <% @post.comments.each do |comment| %>
-      <p> <%= comment.author.name%>: <%= comment.text%><p>
-    <% end %>  
+    <%= render partial: 'partials/comment', collection: @post.comments %> 
   </div>
 </div>
