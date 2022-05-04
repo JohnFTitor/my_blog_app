@@ -1,5 +1,5 @@
 <%= form_with model: post, method: :post do |f| %>
-  <%= f.hidden_field :user, value: user %>
+  <%= f.hidden_field :author, value: user.id %>
   <div>
     <%= f.label :title %>
     <%= f.text_field :title %>

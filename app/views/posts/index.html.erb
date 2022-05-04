@@ -1,7 +1,7 @@
 <div class="posts">
   <%= render 'partials/card', user: @user %>
   <ul class="cards">
-    <% @posts.each do |post| %>
+    <% @posts.order(created_at: :desc).each do |post| %>
       <li class="post-comment">
         <%= render 'partials/post_card', post: post %>
         <div class="card-info">

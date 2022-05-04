@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'users/:user_id/posts/new', to: 'posts#new'
 
+  post 'users/:user_id/posts', to: 'posts#create'
+
   get 'users/:user_id/posts/:id', to: 'posts#show'
 
   # Defines the root path route ("/")
