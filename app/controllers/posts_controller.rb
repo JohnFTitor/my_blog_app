@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
 
   def new 
-    post = Post.new()
+    post = Post.new
     user = User.find(params[:user_id])
     respond_to do |format|
       format.html { render :new, locals: { post: post, user: user } }
@@ -28,6 +28,7 @@ class PostsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
+    @comment = Comment.new
   end
 
   private

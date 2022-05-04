@@ -7,4 +7,5 @@
   <div class="card-info">
     <%= render partial: 'partials/comment', collection: @post.comments %> 
   </div>
+  <%= render 'partials/comment_form', comment: @comment, user: @user, post: @post %>
 </div>
