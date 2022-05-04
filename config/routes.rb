@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 
   get 'users/:user_id/posts/:id', to: 'posts#show'
 
-  get 'comments', to: 'comments#new'
+  get 'comments', to: 'comments#index'
+
+  post 'comments', to: 'comments#create'
 
   # Defines the root path route ("/")
   # root "articles#index"
