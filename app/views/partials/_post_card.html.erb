@@ -1,0 +1,5 @@
+<div class="card-info">
+  <h3> <%= post.title %> </h3>
+  <p><%= truncate(post.text, :length => 150) %></p>
+  <p class="placeholder stats"> Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
+</div>

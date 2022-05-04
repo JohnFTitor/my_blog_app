@@ -1,1 +1,7 @@
-<h1> List all users </h1> 
+<ul class="cards">
+  <% @users.each do |user| %>
+  <li>
+    <%= render 'partials/card', user: user%>
+  </li>
+  <% end %>
+</ul> 

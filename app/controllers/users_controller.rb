@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
-  def index; end
+  def index
+    @users = User.all.order(:created_at)
+  end
 
   def show
-    @user = params[:id]
+    @user = User.find(params[:id])
   end
 end
