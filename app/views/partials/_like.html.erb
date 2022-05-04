@@ -1,0 +1,5 @@
+<%= form_with model: like, method: 'post' do |f| %>
+  <%= f.hidden_field :author, value: user.id %>
+  <%= f.hidden_field :post, value: post.id %>
+  <%= f.submit 'Like' %>
+<% end %>

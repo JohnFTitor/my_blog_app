@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts
+    @like = Like.new
   end
 
   def new 
@@ -30,6 +31,7 @@ class PostsController < ApplicationController
     id = params[:id].to_i
     @post = @user.posts.order(:id)[id]
     @comment = Comment.new
+    @like = Like.new
   end
 
   private

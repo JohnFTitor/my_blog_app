@@ -18,6 +18,10 @@ Rails.application.routes.draw do
 
   post 'comments', to: 'comments#create'
 
+  get 'likes', to: 'likes#index'
+
+  post 'likes', to: 'likes#create'
+
   # Defines the root path route ("/")
   # root "articles#index"
 end
