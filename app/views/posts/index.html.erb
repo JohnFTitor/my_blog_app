@@ -5,9 +5,7 @@
       <li class="post-comment">
         <%= render 'partials/post_card', post: post %>
         <div class="card-info">
-          <% post.recent_comments.each do |comment| %>
-            <p> <%= comment.author.name%>: <%= comment.text%><p>
-          <% end %>  
+          <%= render partial: 'partials/comment', collection: post.recent_comments %>   
         </div>
       </li>
     <% end %>
