@@ -1,0 +1,12 @@
+<%= form_with model: new_post, method: :post do |f| %>
+  <%= f.hidden_field :user, value: user %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :text %>
+    <%= f.text_area :text %>
+  </div>
+  <%= f.submit 'Create Post' %>
+<% end %>
