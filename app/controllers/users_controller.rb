@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.all.order(:created_at)
+    @current_user = current_user
   end
 
   def show
