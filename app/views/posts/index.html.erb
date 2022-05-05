@@ -3,7 +3,7 @@
   <ul class="cards">
     <% @posts.order(created_at: :desc).each do |post| %>
       <li class="post-comment">
-        <%= render 'partials/post_card', post: post %>
+        <%= render 'partials/post_card', post: post, user: @user %>
         <%= render 'partials/like', post: post, like: @like %>
         <div class="card-info">
           <%= render partial: 'partials/comment', collection: post.recent_comments %>   

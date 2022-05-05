@@ -28,8 +28,7 @@ class PostsController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    id = params[:id].to_i
-    @post = @user.posts.order(:id)[id]
+    @post = Post.find(params[:id])
     @comment = Comment.new
     @like = Like.new
   end

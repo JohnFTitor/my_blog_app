@@ -7,9 +7,9 @@
   <ul class="cards">
     <% @user.recent_posts.each do |post| %>
       <li>
-        <%= render 'partials/post_card', post: post %>
+        <%= render 'partials/post_card', post: post, user: @user %>
       </li>
     <% end %>
   </ul>
-  <button> See all Posts </button>
+  <%= link_to 'See more Posts', user_posts_path(user_id: @user.id) %>
 </div>
