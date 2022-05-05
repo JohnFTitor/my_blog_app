@@ -7,20 +7,20 @@ class PostsController < ApplicationController
 
   def new 
     post = Post.new
-    user = User.find(params[:user_id])
     respond_to do |format|
-      format.html { render :new, locals: { post: post, user: user } }
+      format.html { render :new, locals: { post: post } }
     end
   end
 
   def create
     post = Post.new(get_params)
+    post.author = current_user
     respond_to do |format|
       format.html do
         if post.save
           redirect_to action: :index, user_id: post.author.id
         else
-          render :new, locals: { post: post, user: post.author}
+          render :new, locals: { post: post }
         end
       end
     end
@@ -37,8 +37,6 @@ class PostsController < ApplicationController
   private
   
   def get_params
-    response = params.require(:post).permit(:author, :title, :text)
-    response[:author] = User.find(response[:author])
-    response
+    response = params.require(:post).permit(:title, :text)
   end
 end
