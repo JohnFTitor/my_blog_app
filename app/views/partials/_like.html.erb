@@ -1,0 +1,4 @@
+<%= form_with model: like, method: 'post' do |f| %>
+  <%= f.hidden_field :post, value: post.id %>
+  <%= f.submit 'Like', class: "absolute top-0 right-0 bg-sky-700 text-white p-5 hover:cursor-pointer hover:bg-red-700" %>
+<% end %>

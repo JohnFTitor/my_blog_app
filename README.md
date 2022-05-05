@@ -67,6 +67,14 @@ $ bundle exec rspec /spec
 
 In the root folder to check the consistency of the app. Please don't make changes to the tests unless completely necessary, and mention it in your PR description. 
 
+Important note: Since this project uses TailwindCSS for the styling, you need to run: 
+
+```bash
+$ ./bin/dev
+```
+
+For you to see the styling being applied in the browser during development
+
 ## Authors
 
 :bust_in_silhouette: **Andrés Felipe Arroyave Naranjo**
