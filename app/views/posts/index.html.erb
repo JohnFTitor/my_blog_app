@@ -1,4 +1,4 @@
-<div class="flex flex-col gap-8 items-center w-full">
+<div class="flex flex-col gap-8 items-center w-full mt-5">
   <%= render 'partials/card', user: @user %>
   <ul class="flex flex-col gap-8 items-center w-full">
     <% @posts.order(created_at: :desc).each do |post| %>
