@@ -5,22 +5,22 @@ class PostsController < ApplicationController
     @like = Like.new
   end
 
-  def new 
+  def new
     post = Post.new
     respond_to do |format|
-      format.html { render :new, locals: { post: post } }
+      format.html { render :new, locals: { post: } }
     end
   end
 
   def create
-    post = Post.new(get_params)
+    post = Post.new(fetch_params)
     post.author = current_user
     respond_to do |format|
       format.html do
         if post.save
           redirect_to action: :index, user_id: post.author.id
         else
-          render :new, locals: { post: post }
+          render :new, locals: { post: }
         end
       end
     end
@@ -34,8 +34,8 @@ class PostsController < ApplicationController
   end
 
   private
-  
-  def get_params
-    response = params.require(:post).permit(:title, :text)
+
+  def fetch_params
+    params.require(:post).permit(:title, :text)
   end
 end

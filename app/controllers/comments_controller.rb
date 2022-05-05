@@ -3,8 +3,8 @@ class CommentsController < ApplicationController
     redirect_to users_path
   end
 
-  def create 
-    comment = Comment.new(get_params)
+  def create
+    comment = Comment.new(fetch_params)
     comment.author = current_user
     respond_to do |format|
       format.html do
@@ -15,8 +15,8 @@ class CommentsController < ApplicationController
   end
 
   private
-  
-  def get_params
+
+  def fetch_params
     response = params.require(:comment).permit(:post, :text)
     response[:post] = Post.find(response[:post])
     response

@@ -4,20 +4,18 @@ class LikesController < ApplicationController
   end
 
   def create
-    like = Like.new(get_params)
+    like = Like.new(fetch_params)
     like.author = current_user
     respond_to do |format|
-      format.html do 
-        if like.save 
-          redirect_back(fallback_location: root_path)
-        end
+      format.html do
+        redirect_back(fallback_location: root_path) if like.save
       end
     end
   end
 
-  private 
+  private
 
-  def get_params
+  def fetch_params
     response = params.require(:like).permit(:post)
     response[:post] = Post.find(response[:post])
     response
