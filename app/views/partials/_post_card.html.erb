@@ -1,7 +1,7 @@
-<%= link_to user_post_path(user_id: user.id, id: post.id) do %>
-  <div class="card-info">
-    <h3> <%= post.title %> </h3>
-    <p><%= truncate(post.text, :length => 150) %></p>
-    <p class="placeholder stats"> Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
+<%= link_to user_post_path(user_id: user.id, id: post.id), class: "w-full" do %>
+  <div class="relative border-4 border-solid border-gray-900 p-11 h-48 w-full flex items-center">
+    <h3 class="absolute text-3xl top-3 left-3" > <%= post.title %> </h3>
+    <p class="text-2xl" ><%= truncate(post.text, :length => 150) %></p>
+    <p class="absolute right-4 bottom-4 text-xl"> Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
   </div>
 <% end %>

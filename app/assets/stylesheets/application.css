@@ -14,10 +14,6 @@
  *= require_self
  */
 
-html {
-  font-size: 10px;
-}
-
 body {
   padding: 30px 50px;
 }
@@ -33,56 +29,7 @@ li {
   justify-content: center;
 }
 
-p {
-  margin: 0;
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 4rem;
-  margin: 0;
-}
-
-h3 {
-  font-size: 3rem;
-  margin: 0;
-  margin-bottom: 20px;
-}
-
-button {
-  background: transparent;
-  border: 1px solid black;
-  font-size: 2rem;
-  padding: 10px 20px;
-}
-
-button:hover {
+button:hover,
+a:hover {
   cursor: pointer;
-}
-
-.cards {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.user,
-.posts {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-}
-
-.bio h2 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.post-comment {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
