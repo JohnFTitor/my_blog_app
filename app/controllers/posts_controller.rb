@@ -15,6 +15,8 @@ class PostsController < ApplicationController
   def create
     post = Post.new(fetch_params)
     post.author = current_user
+    post.likes_counter = 0
+    post.comments_counter = 0
     respond_to do |format|
       format.html do
         if post.save
