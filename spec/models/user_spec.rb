@@ -7,13 +7,13 @@ RSpec.describe 'User', type: :model do
     User.destroy_all
   end
   
-  subject { User.new( name: 'test', photo: 'link', bio: 'bio') }
+  subject { User.new( name: 'test', photo: 'link',  posts_counter: 0, bio: 'bio') }
 
   it 'should return three most recent posts' do 
     last_three_posts = []
     
     (1..10).each do |i|
-      post = Post.new( title: "title-#{i}", text: 'text' )
+      post = Post.new( title: "title-#{i}", text: 'text', comments_counter: 0, likes_counter: 0 )
       post.author = subject
       post.save
 

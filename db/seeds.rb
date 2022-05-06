@@ -13,7 +13,8 @@
     Sed tincidunt sagittis interdum. Praesent et sollicitudin velit, nec eleifend leo. In porta quam eget libero 
     efficitur fringilla. Etiam eget ornare dolor, eget mattis sem. Nulla tempor turpis fermentum nisi faucibus 
     iaculis. Donec at sapien nunc. Sed cursus dolor at lobortis gravida. Curabitur in mollis mi. Proin purus sem, 
-    placerat at lacus sed, facilisis molestie sapien. Fusce at ultricies mauris, id dapibus risus. Aliquam erat volutpat.")
+    placerat at lacus sed, facilisis molestie sapien. Fusce at ultricies mauris, id dapibus risus. Aliquam erat volutpat.",
+    posts_counter: 0)
 end
 
 (1..100).each do |id|
@@ -38,7 +39,9 @@ end
   Sed tincidunt sagittis interdum. Praesent et sollicitudin velit, nec eleifend leo. In porta quam eget libero 
   efficitur fringilla. Etiam eget ornare dolor, eget mattis sem. Nulla tempor turpis fermentum nisi faucibus 
   iaculis. Donec at sapien nunc. Sed cursus dolor at lobortis gravida. Curabitur in mollis mi. Proin purus sem, 
-  placerat at lacus sed, facilisis molestie sapien. Fusce at ultricies mauris, id dapibus risus. Aliquam erat volutpat." )
+  placerat at lacus sed, facilisis molestie sapien. Fusce at ultricies mauris, id dapibus risus. Aliquam erat volutpat.",
+  comments_counter: 0,
+  likes_counter: 0)
 end
   
 (1..200).each do |id|
