@@ -15,4 +15,10 @@ RSpec.describe 'Comment', type: :model do
   it 'should update post likes_counter' do 
     expect(subject.post.comments_counter).to eq(1)
   end
+
+  it 'should have text' do 
+    subject.text = ''
+    expect(subject).to_not be_valid
+  end
+
 end
