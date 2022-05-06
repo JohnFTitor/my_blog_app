@@ -10,13 +10,21 @@ RSpec.describe 'User', type: :model do
   subject { User.new( name: 'test', photo: 'link', bio: 'bio') }
 
   it 'should return three most recent posts' do 
+    last_three_posts = []
+    
     (1..10).each do |i|
       post = Post.new( title: "title-#{i}", text: 'text' )
       post.author = subject
       post.save
+
+      if i > 7
+        last_three_posts << post
+      end
     end
+
     recent_posts = subject.recent_posts
     expect(recent_posts.length).to eq(3)
+    expect(recent_posts).to eq(last_three_posts.reverse)
   end
 
   it 'should not have blank name' do 
