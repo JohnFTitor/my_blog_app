@@ -1,0 +1,5 @@
+<% if flash[:liked] || flash[:unliked] %>
+  <% flash.each do |type, msg| %>
+    <span class="absolute top-0 left-0 px-5 py-2.5 bg-blue-600 text-white" > <%= msg %> </span>
+  <% end %>
+<% end %>

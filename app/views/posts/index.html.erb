@@ -1,4 +1,8 @@
 <div class="flex flex-col gap-8 items-center w-full mt-5">
+  <% if flash[:success] %>
+    <span class="px-5 py-2.5 bg-green-500 text-white text-xl"> <%= flash[:success] %> </span>
+  <% end %>
+  <%= render 'partials/like_flash' %>
   <%= render 'partials/card', user: @user %>
   <ul class="flex flex-col gap-8 items-center w-full">
     <% @posts.order(created_at: :desc).each do |post| %>

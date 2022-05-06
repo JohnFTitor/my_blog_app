@@ -1,4 +1,7 @@
 <div class="flex flex-col w-full mt-5">
   <h1 class="text-4xl mb-8"> Hello! Please create your post here </h1>
+  <% if flash[:error] %>
+    <span class="px-5 py-2.5 bg-red-600 text-white text-xl w-fit m-1"> <%= flash[:error]%> </span>
+  <% end %>
   <%= render 'partials/new_post', post: post %>
 </div>

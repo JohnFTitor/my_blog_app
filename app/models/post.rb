@@ -16,6 +16,10 @@ class Post < ApplicationRecord
     comments.order(created_at: :desc).limit(5)
   end
 
+  def liked?(user)
+    likes.find { |like| like.author_id == user.id }
+  end
+
   private
 
   def initialize_values
