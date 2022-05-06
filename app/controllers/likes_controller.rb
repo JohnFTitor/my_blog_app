@@ -4,11 +4,26 @@ class LikesController < ApplicationController
   end
 
   def create
-    like = Like.new(fetch_params)
-    like.author = current_user
     respond_to do |format|
       format.html do
-        redirect_back(fallback_location: root_path) if like.save
+        params = fetch_params
+        post = Post.find(params[:post])
+        params[:post] = post
+
+        if post.liked?(current_user)
+          flash[:unliked] = 'Unliked post'
+          like = post.likes.find_by(author_id: current_user.id)
+          Like.destroy(like.id)
+          redirect_back(fallback_location: root_path)
+          return
+        end
+
+        like = Like.new(params)
+        like.author = current_user
+        if like.save
+          flash[:liked] = 'Liked post'
+          redirect_back(fallback_location: root_path)
+        end
       end
     end
   end
@@ -16,8 +31,6 @@ class LikesController < ApplicationController
   private
 
   def fetch_params
-    response = params.require(:like).permit(:post)
-    response[:post] = Post.find(response[:post])
-    response
+    params.require(:like).permit(:post)
   end
 end

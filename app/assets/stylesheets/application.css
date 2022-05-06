@@ -14,10 +14,6 @@
  *= require_self
  */
 
-body {
-  padding: 30px 50px;
-}
-
 ul {
   padding: 0;
 }

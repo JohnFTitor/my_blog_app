@@ -8,7 +8,11 @@ class CommentsController < ApplicationController
     comment.author = current_user
     respond_to do |format|
       format.html do
-        comment.save
+        if comment.save
+          flash[:success] = 'Comment added succesfully'
+        else
+          flash[:error] = "Can't add empty comment"
+        end
         redirect_back(fallback_location: root_path)
       end
     end
