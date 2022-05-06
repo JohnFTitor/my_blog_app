@@ -20,11 +20,11 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html do
         if post.save
-          flash[:success] = "Post was successfully created!"
+          flash[:success] = 'Post was successfully created!'
           redirect_to action: :index, user_id: current_user.id
         else
-          flash.now[:error] = "Wrong value"
-          render :new, status: 422, locals: { post: post }
+          flash.now[:error] = 'Wrong value'
+          render :new, status: 422, locals: { post: }
         end
       end
     end

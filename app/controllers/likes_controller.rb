@@ -21,7 +21,7 @@ class LikesController < ApplicationController
         like = Like.new(params)
         like.author = current_user
         if like.save
-          flash[:liked] = "Liked post"
+          flash[:liked] = 'Liked post'
           redirect_back(fallback_location: root_path)
         end
       end

@@ -1,8 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'Like', type: :model do 
-  
-  before :all do 
+RSpec.describe 'Like', type: :model do
+  before :all do
     Comment.destroy_all
     Post.destroy_all
     User.destroy_all
@@ -12,7 +11,7 @@ RSpec.describe 'Like', type: :model do
 
   subject { Like.create(author: @user, post: @post) }
 
-  it 'should update post likes_counter' do 
+  it 'should update post likes_counter' do
     expect(subject.post.likes_counter).to eq(1)
   end
 end
