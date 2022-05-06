@@ -8,7 +8,7 @@ RSpec.describe 'Post', type: :model do
     @user = User.create(name: 'name', photo: 'link', bio: 'some')
   end
 
-  subject { Post.new(title: 'title', text: 'text', author: @user) }
+  subject { Post.new(title: 'title', text: 'text', comments_counter: 0, likes_counter: 0 ,author: @user) }
 
   describe 'should implement methods' do
     it 'should return 5 most recent comments' do 
