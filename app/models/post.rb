@@ -13,7 +13,7 @@ class Post < ApplicationRecord
   end
 
   def recent_comments
-    comments.order(created_at: :desc).limit(5)
+    comments.order(created_at: :desc).limit(5).includes(:author)
   end
 
   def liked?(user)
