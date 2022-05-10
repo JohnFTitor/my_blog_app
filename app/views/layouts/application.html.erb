@@ -5,20 +5,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%
-=begin%>
- <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %> 
-<%
-=end%>
-
+    <%begin%>
+      <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %> 
+    <%end%>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%
-=begin%>
- <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %> 
-<%
-=end%>
+    <%begin%>
+      <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %> 
+    <%end%>
     <%= stylesheet_link_tag "partials", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "application" %>
   </head>
 
   <body>
@@ -26,11 +22,8 @@
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <% if user_signed_in?%>
-        <%= current_user.email%>
-      <%= link_to 'Log out' , destroy_user_session_path, method: :delete%>
-      <% else %>
-        <%= link_to 'Log in', new_user_session_path %> 
-        <%= link_to 'Sign up', new_user_registration_path %>
+        <%= current_user.name%>
+        <%= link_to 'Log out' , destroy_user_session_path, method: :delete%>
       <% end %>
       <%= yield %>
     </main>
