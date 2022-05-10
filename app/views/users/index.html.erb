@@ -1,8 +1,4 @@
 <div class="w-full">
-  <div class="flex items-center justify-between w-full h-52 bg-slate-800 p-10 mb-9">
-    <h2 class="text-5xl text-white"> Current User: <%= @current_user.name %> </h2>
-    <%= link_to 'Create New Post', posts_new_path, class: "px-5 py-2.5 text-white bg-sky-700 hover:cursor-pointer hover:bg-red-700" %>
-  </div>
   <ul class="flex flex-col w-full gap-8">
     <% @users.each do |user| %>
     <li class="w-full">
