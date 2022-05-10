@@ -6,11 +6,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%begin%>
-      <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %> 
+      <%
+=begin%>
+ <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>  
+<%
+=end%>
     <%end%>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%begin%>
-      <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %> 
+      <%
+=begin%>
+ <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>  
+<%
+=end%>
     <%end%>
     <%= stylesheet_link_tag "partials", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
