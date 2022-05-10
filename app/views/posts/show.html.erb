@@ -7,6 +7,9 @@
   <% end %>
   <%= render 'partials/like_flash' %>
   <div class="relative p-12 border-solid border-4 border-gray-700 w-full">
+    <% if can? :delete, @post %>
+      <button class="py-2.5 px-5 bg-red-800 text-white text-xl"> Delete </button>
+    <% end%>
     <h3 class="text-3xl mb-8"> <%=@post.title%> by <%= @post.author.name%> </h3>
     <p class="text-xl"> <%= @post.text%> </p>
     <p class="absolute right-4 bottom-4"> Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %> </p>
