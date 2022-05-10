@@ -17,7 +17,7 @@
   <body>
     <% if user_signed_in?%>
       <header class="flex items-center justify-between w-full h-32 bg-slate-800 p-10 mb-9">
-        <h2 class="text-4xl text-white"> Current User: <%= current_user.name %> </h2>
+        <h2 class="text-4xl text-white"> Welcome, <%= current_user.name %> </h2>
         <div class="flex items-center gap-4">
           <%= link_to 'Create New Post', posts_new_path, class: "px-5 py-2.5 text-white bg-sky-700 hover:cursor-pointer hover:bg-sky-600" %>
           <%= link_to 'Log out' , destroy_user_session_path, method: :delete, class: "px-5 py-2.5 text-white bg-red-700 hover:cursor-pointer hover:bg-red-800" %>
