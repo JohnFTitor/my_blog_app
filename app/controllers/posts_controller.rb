@@ -37,6 +37,13 @@ class PostsController < ApplicationController
     @like = Like.new
   end
 
+  def delete
+    id = params[:id]
+    user_id = params[:user_id]
+    Post.destroy(id)
+    redirect_to action: :index, user_id: user_id
+  end
+
   private
 
   def fetch_params

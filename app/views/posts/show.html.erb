@@ -8,7 +8,7 @@
   <%= render 'partials/like_flash' %>
   <div class="relative p-12 border-solid border-4 border-gray-700 w-full">
     <% if can? :delete, @post %>
-      <button class="py-2.5 px-5 bg-red-800 text-white text-xl"> Delete </button>
+      <%= link_to 'Delete', post_delete_path, params: { id: @post.id, user_id: @post.author.id }, method: :delete, class: "px-5 py-2.5 text-white bg-red-700 hover:cursor-pointer hover:bg-red-800" %>
     <% end%>
     <h3 class="text-3xl mb-8"> <%=@post.title%> by <%= @post.author.name%> </h3>
     <p class="text-xl"> <%= @post.text%> </p>
