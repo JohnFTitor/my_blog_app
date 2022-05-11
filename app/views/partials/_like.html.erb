@@ -1,4 +1,4 @@
-<% if can? :create, like %>
+<% if user_signed_in? %>
   <div class="flex absolute top-0 right-0">
     <% if can? :delete, post %>
       <%= link_to 'Delete', post_delete_path(id: post.id, user_id: post.author.id), method: :delete, class: "p-5 bg-red-800 hover:bg-red-700 text-white text-xl" %>      
