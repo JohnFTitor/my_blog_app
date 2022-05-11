@@ -1,10 +1,12 @@
 <%= link_to user_post_path(user_id: user.id, id: post.id), class: "w-full" do %>
   <div class="relative border-4 border-solid border-gray-900 p-11 h-48 w-full flex items-center">
-    <% if can? :delete, post %>
-      <button class="py-2.5 px-5 bg-red-800 text-white text-xl"> Delete </button>
-    <% end%>
+    
     <h3 class="absolute text-3xl top-3 left-3" > <%= post.title %> </h3>
     <p class="text-2xl" ><%= truncate(post.text, :length => 150) %></p>
     <p class="absolute right-4 bottom-4 text-xl"> Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
   </div>
 <% end %>
+
+<% if can? :delete, post %>
+      <%= link_to 'Delete', post_delete_path(id: post.id, user_id: user.id), method: :delete, class: "py-2.5 px-5 bg-red-800 text-white text-xl" %>      
+<% end%>
