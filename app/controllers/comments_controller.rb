@@ -1,10 +1,11 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
   def index
     redirect_to users_path
   end
 
   def create
-    comment = Comment.new(fetch_params)
+    comment = Comment.new(comment_params)
     comment.author = current_user
     respond_to do |format|
       format.html do
@@ -18,9 +19,15 @@ class CommentsController < ApplicationController
     end
   end
 
+  def delete
+    id = params[:id]
+    Comment.destroy(id)
+    redirect_back(fallback_location: root_path)
+  end
+
   private
 
-  def fetch_params
+  def comment_params
     response = params.require(:comment).permit(:post, :text)
     response[:post] = Post.find(response[:post])
     response

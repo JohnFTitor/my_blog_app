@@ -29,6 +29,8 @@ gem 'jbuilder'
 
 gem 'devise'
 
+gem 'cancancan'
+
 gem 'jquery-rails'
 
 # Use Redis adapter to run Action Cable in production

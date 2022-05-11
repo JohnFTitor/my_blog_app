@@ -12,7 +12,7 @@
     <p class="absolute right-4 bottom-4"> Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %> </p>
     <%= render 'partials/like', post: @post, like: @like %>
   </div>
-  <div class="p-10 border-solid border-4 border-sky-700">
+  <div class="p-10 border-solid border-4 border-sky-700 flex flex-col gap-1">
     <%= render partial: 'partials/comment', collection: @post.comments %> 
     <%= render 'partials/comment_form', comment: @comment, post: @post %>
   </div>
