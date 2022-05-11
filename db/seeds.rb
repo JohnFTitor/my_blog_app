@@ -7,7 +7,11 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 (1..20).each do |id| 
-  User.create(name: "User-#{id}",
+  User.create(
+    email: "fakeemail#{id}@gmail.com",
+    password: "123456",
+    confirmed_at: DateTime.now,
+    name: "User-#{id}",
     photo: 'https://i.pinimg.com/originals/d8/19/30/d81930b4ed6e0702d4daf02aae30b4da.png',
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut leo at diam consectetur lacinia. 
     Sed tincidunt sagittis interdum. Praesent et sollicitudin velit, nec eleifend leo. In porta quam eget libero 
