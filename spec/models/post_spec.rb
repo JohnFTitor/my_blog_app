@@ -6,7 +6,7 @@ RSpec.describe 'Post', type: :model do
     @user = User.create(name: 'name', photo: 'link', bio: 'some', email: "fakeemail2@gmail.com",
       password: "123456", confirmed_at: DateTime.now, posts_counter: 0)
   end
-
+  
   subject { Post.new(title: 'title', text: 'text', comments_counter: 0, likes_counter: 0, author: @user) }
 
   describe 'should implement methods' do
@@ -27,7 +27,9 @@ RSpec.describe 'Post', type: :model do
     end
 
     it 'should increase post_counter method of author' do
-      expect(@user.posts_counter).to eq(1)
+      @user.posts_counter = 0
+      subject.save
+      expect(subject.author.posts_counter).to eq(1)
     end
   end
 

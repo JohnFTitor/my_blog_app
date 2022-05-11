@@ -8,9 +8,11 @@ RSpec.describe 'Comment', type: :model do
     @post = Post.create(title: 'title', text: 'text', author: @user, likes_counter: 0, comments_counter: 0)
   end
 
-  subject { Comment.create(author: @user, post: @post, text: 'text') }
+  subject { Comment.new(author: @user, post: @post, text: 'text') }
 
   it 'should update post likes_counter' do
+    @post.comments_counter = 0
+    subject.save
     expect(subject.post.comments_counter).to eq(1)
   end
 
