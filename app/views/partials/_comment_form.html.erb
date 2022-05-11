@@ -1,4 +1,4 @@
-<% if can? :create, comment %>
+<% if user_signed_in? %>
   <%= form_with model: comment, method: :post, class: "p-10 mt-10 border-solid border-4 border-sky-500" do |f| %>
     <%= f.hidden_field :post, value: post.id %>
     <div class="flex flex-col mb-4">
