@@ -12,14 +12,16 @@ Rails.application.routes.draw do
   get 'posts/new', to: 'posts#new'
   
   delete 'posts/:user_id/delete/:id', to: 'posts#delete', as: 'post_delete' 
-
+  
   post 'posts', to: 'posts#create'
 
   get 'users/:user_id/posts/:id', to: 'posts#show', as: 'user_post'
 
   get 'comments', to: 'comments#index'
-
+  
   post 'comments', to: 'comments#create'
+  
+  delete 'comments/delete/:id', to: 'comments#delete', as: 'comment_delete'
 
   get 'likes', to: 'likes#index'
 

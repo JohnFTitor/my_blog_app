@@ -1,1 +1,4 @@
 <p class="text-xl"> <%= comment.author.name%>: <%= comment.text%><p>
+<% if can? :delete, comment %>
+  <%= link_to 'Delete', comment_delete_path(id: comment.id), method: :delete, class: "py-2.5 px-5 bg-red-800 text-white text-xl" %>      
+<% end%>
