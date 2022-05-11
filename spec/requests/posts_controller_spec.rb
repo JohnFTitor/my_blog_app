@@ -2,10 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'PostsControllers', type: :request do
   before :all do
-    Comment.destroy_all
-    Post.destroy_all
     User.destroy_all
-    user = User.create(id: 2, name: 'test 1', photo: 'photo 1', bio: 'text 1', posts_counter: 0)
+    user = User.create(id: 2, name: 'test 1', photo: 'photo 1', bio: 'text 1', posts_counter: 0, email: "fakeemail2@gmail.com",
+      password: "123456", confirmed_at: DateTime.now)
     post1 = Post.create(id: 1, author: user, title: 'Post title-1', text: 'Some text', likes_counter: 0,
                         comments_counter: 0)
     post2 = Post.create(id: 2, author: user, title: 'Post title-2', text: 'Some text', likes_counter: 0,

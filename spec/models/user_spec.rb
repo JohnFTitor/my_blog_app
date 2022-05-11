@@ -2,12 +2,11 @@ require 'rails_helper'
 
 RSpec.describe 'User', type: :model do
   before :all do
-    Comment.destroy_all
-    Post.destroy_all
     User.destroy_all
   end
 
-  subject { User.new(name: 'test', photo: 'link', posts_counter: 0, bio: 'bio') }
+  subject { User.new(name: 'test', photo: 'link', posts_counter: 0, bio: 'bio', email: "fakeemail2@gmail.com",
+    password: "123456", confirmed_at: DateTime.now) }
 
   it 'should return three most recent posts' do
     last_three_posts = []
