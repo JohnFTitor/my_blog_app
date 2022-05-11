@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.order(created_at: :desc).includes(:comments)
@@ -13,10 +15,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.new(fetch_params)
+    post = Post.new(post_params)
     post.author = current_user
-    post.likes_counter = 0
-    post.comments_counter = 0
     respond_to do |format|
       format.html do
         if post.save
@@ -46,7 +46,7 @@ class PostsController < ApplicationController
 
   private
 
-  def fetch_params
-    params.require(:post).permit(:title, :text)
+  def post_params
+    params.require(:post).permit(:title, :text, :likes_counter, :comments_counter)
   end
 end
