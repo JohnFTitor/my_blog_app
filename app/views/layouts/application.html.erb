@@ -14,16 +14,21 @@
   </head>
 
   <body>
-    <% if user_signed_in?%>
-      <header class="flex items-center justify-between w-full h-32 bg-slate-800 p-10 mb-9">
+    <header class="fixed flex items-center justify-between w-full h-32 bg-slate-800 p-10 mb-9">
+      <% if user_signed_in?%>
         <h2 class="text-4xl text-white"> Welcome, <%= current_user.name %> </h2>
         <div class="flex items-center gap-4">
           <%= link_to 'Create New Post', posts_new_path, class: "px-5 py-2.5 text-white bg-sky-700 hover:cursor-pointer hover:bg-sky-600" %>
           <%= link_to 'Log out' , destroy_user_session_path, method: :delete, class: "px-5 py-2.5 text-white bg-red-700 hover:cursor-pointer hover:bg-red-800" %>
         </div>
-      </header>
-    <% end %>
-    <main class="container mx-auto px-5 flex">
+      <% else %>
+        <h2 class="text-4xl text-white"> Welcome! </h2>
+        <div class="flex items-center gap-4">
+          <%= link_to 'Log In', new_user_session_path, class: "px-5 py-2.5 text-white bg-sky-700 hover:cursor-pointer hover:bg-sky-600" %>
+        </div>
+      <% end %>
+    </header>
+    <main class="container mx-auto px-5 flex pb-20">
       <% if notice %>
         <p class="absolute left-0 top-0 text-center text-xl text-white bg-sky-900 p-2.5"><%= notice %></p>
       <% end%>
