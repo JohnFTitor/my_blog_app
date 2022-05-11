@@ -1,4 +1,10 @@
-<%= form_with model: like, method: 'post' do |f| %>
-  <%= f.hidden_field :post, value: post.id %>
-  <%= f.submit 'Like', class: "absolute top-0 right-0 bg-sky-700 text-white p-5 hover:cursor-pointer hover:bg-red-700" %>
-<% end %>
+<div class="flex absolute top-0 right-0">
+  <% if can? :delete, post %>
+    <%= link_to 'Delete', post_delete_path(id: post.id, user_id: post.author.id), method: :delete, class: "p-5 bg-red-800 hover:bg-red-700 text-white text-xl" %>      
+  <% end%>
+  <%= form_with model: like, method: 'post' do |f| %>
+    <%= f.hidden_field :post, value: post.id %>
+    <%= f.submit 'Like', class: "bg-sky-700 text-white text-xl p-5 hover:cursor-pointer hover:bg-sky-600" %>
+  <% end %>
+</div>
+

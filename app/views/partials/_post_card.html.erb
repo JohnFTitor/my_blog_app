@@ -6,6 +6,3 @@
     <p class="absolute right-4 bottom-4 text-xl"> Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
   </div>
 <% end %>
-<% if can? :delete, post %>
-  <%= link_to 'Delete', post_delete_path(id: post.id, user_id: user.id), method: :delete, class: "py-2.5 px-5 bg-red-800 text-white text-xl" %>      
-<% end%>

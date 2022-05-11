@@ -7,15 +7,12 @@
   <% end %>
   <%= render 'partials/like_flash' %>
   <div class="relative p-12 border-solid border-4 border-gray-700 w-full">
-    <% if can? :delete, @post %>
-      <%= link_to 'Delete', post_delete_path, params: { id: @post.id, user_id: @post.author.id }, method: :delete, class: "px-5 py-2.5 text-white bg-red-700 hover:cursor-pointer hover:bg-red-800" %>
-    <% end%>
     <h3 class="text-3xl mb-8"> <%=@post.title%> by <%= @post.author.name%> </h3>
     <p class="text-xl"> <%= @post.text%> </p>
     <p class="absolute right-4 bottom-4"> Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %> </p>
     <%= render 'partials/like', post: @post, like: @like %>
   </div>
-  <div class="p-10 border-solid border-4 border-sky-700">
+  <div class="p-10 border-solid border-4 border-sky-700 flex flex-col gap-1">
     <%= render partial: 'partials/comment', collection: @post.comments %> 
     <%= render 'partials/comment_form', comment: @comment, post: @post %>
   </div>
