@@ -3,12 +3,12 @@ require 'rails_helper'
 RSpec.describe 'UsersControllers', type: :request do
   before :all do
     User.destroy_all
-    User.create(id: 1, name: 'test 1', photo: 'photo 1', bio: 'text 1', posts_counter: 0, email: "fakeemail1@gmail.com",
-      password: "123456", confirmed_at: DateTime.now)
-    User.create(id: 2, name: 'test 2', photo: 'photo 2', bio: 'text 2', posts_counter: 0, email: "fakeemail2@gmail.com",
-      password: "123456", confirmed_at: DateTime.now)
-    user3 = User.create(id: 3, name: 'test 3', photo: 'photo 3', bio: 'text 3', posts_counter: 0, email: "fakeemail3@gmail.com",
-      password: "123456", confirmed_at: DateTime.now)
+    User.create(id: 1, name: 'test 1', photo: 'photo 1', bio: 'text 1', posts_counter: 0,
+                email: 'fakeemail1@gmail.com', password: '123456', confirmed_at: DateTime.now)
+    User.create(id: 2, name: 'test 2', photo: 'photo 2', bio: 'text 2', posts_counter: 0,
+                email: 'fakeemail2@gmail.com', password: '123456', confirmed_at: DateTime.now)
+    user3 = User.create(id: 3, name: 'test 3', photo: 'photo 3', bio: 'text 3', posts_counter: 0,
+                        email: 'fakeemail3@gmail.com', password: '123456', confirmed_at: DateTime.now)
     Post.create(author: user3, title: 'Post title', text: 'Some text', likes_counter: 0, comments_counter: 0)
   end
 

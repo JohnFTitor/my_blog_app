@@ -4,7 +4,8 @@ RSpec.describe 'User Show Page', type: :feature do
   describe 'User Info' do
     before :all do
       User.destroy_all
-      @user= User.create(id: 1, name: 'User-1', photo: 'user_image-1', bio: 'some1', email: "user1@example.com", password: "123456", confirmed_at: DateTime.now, posts_counter: 0)      
+      @user = User.create(id: 1, name: 'User-1', photo: 'user_image-1', bio: 'some1', email: 'user1@example.com',
+                          password: '123456', confirmed_at: DateTime.now, posts_counter: 0)
       (1..10).each do |i|
         post = Post.new(id: i, title: "title-#{i}", text: 'text', comments_counter: 0, likes_counter: 0)
         post.author = @user
@@ -16,10 +17,10 @@ RSpec.describe 'User Show Page', type: :feature do
       visit user_path(id: 1)
     end
 
-    it "should have the user's profile picture" do 
+    it "should have the user's profile picture" do
       images = page.find_all('img')
       expect(images.length).to eq(1)
-      expect(page).to have_xpath("//img[contains(@src,'user_image-1')]")       
+      expect(page).to have_xpath("//img[contains(@src,'user_image-1')]")
     end
 
     it "should have the user's name" do
@@ -29,14 +30,14 @@ RSpec.describe 'User Show Page', type: :feature do
     it 'Should show the number of posts the user has written.' do
       visit user_path(id: 1)
       user1 = page.find('div', id: '1 User-card')
-      expect(user1).to have_content("Number of Posts: 10")      
+      expect(user1).to have_content('Number of Posts: 10')
     end
 
     it "should have the user's bio" do
       expect(page).to have_content('some1')
     end
 
-    it 'should return three most recent posts' do  
+    it 'should return three most recent posts' do
       posts = page.find_all('.post')
 
       expect(page).to have_content('title-10')
@@ -66,5 +67,5 @@ RSpec.describe 'User Show Page', type: :feature do
 
       expect(page).to have_current_path(user_posts_path(user_id: 1))
     end
-  end    
+  end
 end

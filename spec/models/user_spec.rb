@@ -5,8 +5,10 @@ RSpec.describe 'User', type: :model do
     User.destroy_all
   end
 
-  subject { User.new(name: 'test', photo: 'link', posts_counter: 0, bio: 'bio', email: "fakeemail2@gmail.com",
-    password: "123456", confirmed_at: DateTime.now) }
+  subject do
+    User.new(name: 'test', photo: 'link', posts_counter: 0, bio: 'bio', email: 'fakeemail2@gmail.com',
+             password: '123456', confirmed_at: DateTime.now)
+  end
 
   it 'should return three most recent posts' do
     last_three_posts = []
