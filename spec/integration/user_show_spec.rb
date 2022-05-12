@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe 'User Show Page', type: :feature do
   describe 'User Info' do
     before :all do
-      Post.destroy_all
       User.destroy_all
       @user= User.create(id: 1, name: 'User-1', photo: 'user_image-1', bio: 'some1', email: "user1@example.com", password: "123456", confirmed_at: DateTime.now, posts_counter: 0)      
       (1..10).each do |i|
