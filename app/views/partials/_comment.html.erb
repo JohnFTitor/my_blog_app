@@ -1,4 +1,4 @@
-<div class="flex items-center justify-between w-full h-fit p-2 border-b-2 border-solid border-gray-400">
+<div class="flex items-center justify-between w-full h-fit p-2 border-b-2 border-solid border-gray-400 comment">
   <p class="text-2xl"> <strong><%= comment.author.name%>:</strong> <%= comment.text%><p>
   <% if can? :delete, comment %>
     <%= link_to 'Delete', comment_delete_path(id: comment.id), method: :delete, class: "block py-1 px-5 bg-red-800 hover:bg-red-700 text-white text-xl" %>      
