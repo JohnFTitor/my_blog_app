@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Login', type: :system do
+RSpec.describe 'Login', type: :feature do
   describe 'New session page' do
     before :all do
       User.destroy_all
@@ -8,8 +8,11 @@ RSpec.describe 'Login', type: :system do
         password: "123456", confirmed_at: DateTime.now, posts_counter: 0)
     end
 
-    it 'See the username and password inputs and the "Submit" button.' do
+    before :each do
       visit new_user_session_path      
+    end
+
+    it 'See the username and password inputs and the "Submit" button.' do
       email = find_field('Email')
       password = find_field('Password')
       login = find_button('Log in')
@@ -20,13 +23,11 @@ RSpec.describe 'Login', type: :system do
     end
 
     it 'When click the submit button without filling in the email and the password, should get a detailed error.' do
-      visit new_user_session_path
       click_button 'Log in'
       expect(page).to have_content('Invalid Email or password.')
     end
 
     it 'When click the submit button after filling in the email and the password with incorrect data, should get a detailed error.' do
-      visit new_user_session_path      
       fill_in('Email', with: 'user@example.com')
       fill_in('Password', with: '123')
       click_button 'Log in'
@@ -34,11 +35,10 @@ RSpec.describe 'Login', type: :system do
     end
 
     it 'When click the submit button after filling in the email and the password with correct data, I am redirected to the root page.' do
-      visit new_user_session_path      
       fill_in('Email', with: 'user@example.com')
       fill_in('Password', with: '123456')
       click_button 'Log in'     
-      expect(page.current_path).to have_content('/')
+      expect(page).to have_current_path(root_path)
     end
   end
 end
