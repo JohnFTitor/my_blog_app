@@ -37,6 +37,8 @@ gem 'jwt'
 
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'rswag'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
