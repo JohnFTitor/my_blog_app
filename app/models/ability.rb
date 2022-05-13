@@ -12,7 +12,7 @@ class Ability
 
     return unless user.admin?
 
-    can :delete, Post
-    can :delete, Comment
+    can :destroy, Post
+    can :destroy, Comment
   end
 end
