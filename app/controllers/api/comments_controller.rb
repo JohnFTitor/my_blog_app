@@ -5,7 +5,7 @@ class Api::CommentsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:post_id])
     json_response(@post.comments)
-  end 
+  end
 
   def create
     @post = Post.find(params[:post_id])
@@ -19,5 +19,4 @@ class Api::CommentsController < ApplicationController
   def comment_params
     params.permit(:text)
   end
-  
 end
