@@ -37,7 +37,7 @@ class PostsController < ApplicationController
     @like = Like.new
   end
 
-  def delete
+  def destroy
     id = params[:id]
     user_id = params[:user_id]
     Post.destroy(id)

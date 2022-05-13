@@ -8,8 +8,8 @@
     <% @user.recent_posts.each do |post| %>
       <li>
         <%= render 'partials/post_card', post: post, user: @user %>
-        <% if can? :delete, post %>
-          <%= link_to 'Delete', post_delete_path(id: post.id, user_id: post.author.id), method: :delete, class: "p-5 bg-red-800 hover:bg-red-700 text-white text-xl flex items-center" %>      
+        <% if can? :destroy, post %>
+          <%= link_to 'Delete', user_post_path(id: post.id, user_id: post.author.id), method: :delete, class: "p-5 bg-red-800 hover:bg-red-700 text-white text-xl flex items-center" %>      
         <% end%>
       </li>
     <% end %>
