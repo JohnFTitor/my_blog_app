@@ -4,7 +4,7 @@
 
 ## My Blog App
 
-> First Ruby on Rails project. This is a basic Blog website that allows users to create, edit, comment and delete posts, keeping data in a database. This project is aimed to understand the concepts of Rails while at the same time develop a Full-Stack project.   
+> This is a basic Blog website that allows users to create, edit, comment and delete posts, keeping data in a database. This project implements both authorization and authentication in order to provide extended functionality to logged in and authorized users.    
 
 ### Requirements
 In order to work on this project, you need to have the following dependencies installed: 
