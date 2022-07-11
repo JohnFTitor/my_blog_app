@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <header class="fixed flex items-center justify-between w-full h-32 bg-slate-800 p-10 mb-9">
+    <header class="sticky top-0 left-0 flex flex-wrap gap-3 items-center justify-between w-full bg-slate-800 p-5 mb-9 z-40">
       <% if user_signed_in?%>
         <h2 class="text-4xl text-white"> Welcome, <%= current_user.name %> </h2>
         <div class="flex items-center gap-4">
@@ -25,17 +25,17 @@
         </div>
       <% else %>
         <h2 class="text-4xl text-white"> Welcome! </h2>
-        <div class="flex items-center gap-4">
+        <div class="flex flex-wrap items-center gap-4">
           <%= link_to 'Log In', new_user_session_path, class: "px-5 py-2.5 text-white bg-sky-700 hover:cursor-pointer hover:bg-sky-600" %>
         </div>
       <% end %>
     </header>
-    <main class="container mx-auto px-5 flex pb-20">
+    <main class="m-0 box-border w-full px-5 flex pb-20">
       <% if notice %>
-        <p class="absolute left-0 top-0 text-center text-xl text-white bg-sky-900 p-2.5"><%= notice %></p>
+        <p class="absolute left-0 top-0 text-center text-xl text-white bg-sky-900 p-2.5 z-50"><%= notice %></p>
       <% end%>
       <% if alert %>
-        <p class="absolute left-0 top-0 text-center text-xl text-white bg-red-900 p-2.5"><%= alert %></p>
+        <p class="absolute left-0 top-0 text-center text-xl text-white bg-red-900 p-2.5 z-50"><%= alert %></p>
       <% end%>    
       <%= yield %>
     </main>

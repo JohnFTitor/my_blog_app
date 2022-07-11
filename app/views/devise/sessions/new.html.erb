@@ -1,19 +1,19 @@
-<div class="flex flex-col justify-center items-center w-full h-screen">
+<div class="flex flex-col justify-center items-center w-full h-full box-border gap-10">
   <h1 class="text-3xl">Log in</h1>
   <%= form_for(resource, as: resource_name, html: { 'data-turbo': 'false' }, url: session_path(resource_name)) do |f| %>
-    <div class="flex flex-col gap-3 p-10">
-      <div class="field">
+    <div class="flex flex-col gap-3 w-full box-border">
+      <div class="field w-full">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
 
-      <div class="field">
+      <div class="field w-full">
         <%= f.label :password %><br />
         <%= f.password_field :password, autocomplete: "current-password" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
-        <div class="field">
+        <div class="field w-full">
           <%= f.check_box :remember_me %>
           <%= f.label :remember_me %>
         </div>
