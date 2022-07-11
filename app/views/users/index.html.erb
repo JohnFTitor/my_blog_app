@@ -1,8 +1,8 @@
-<div class="w-full pt-36">
-  <ul class="flex flex-col w-full gap-8">
+<div class="w-full">
+  <ul class="flex flex-wrap justify-center w-full gap-5">
     <% @users.each do |user| %>
-    <li class="w-full">
-      <%= link_to user_path(id: user.id), id: "User: #{user.id}", class: "w-full" do %>
+    <li class="w-full max-w-3xl">
+      <%= link_to user_path(id: user.id), class:"w-full", id: "User: #{user.id}" do %>
         <%= render 'partials/card', user: user%>
       <% end %>
     </li>

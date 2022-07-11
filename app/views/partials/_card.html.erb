@@ -1,9 +1,9 @@
-<div id="<%=user.id%> User-card" class="flex items-center gap-8 w-full">
-  <div class="image-container h-52 w-52">
+<div id="<%=user.id%> User-card" class="flex items-center gap-3 sm:gap-8 w-full">
+  <div class="image-container h-52 w-72">
     <img src=<%= user.photo %> alt="Profile picture of <%= user.name%>" class="border-4 border-solid border-gray-900" />
   </div>
-  <div class="relative border-4 border-solid border-gray-900 p-10 h-48 w-full flex items-center">
-    <h2 class="text-4xl" > <%= user.name %> </h2>
-    <p class="absolute bottom-4 right-8 text-xl">Number of Posts: <%= user.posts_counter%> </p>
+  <div class="relative border-4 border-solid border-gray-900 p-3 sm:p-10 h-48 w-full flex flex-wrap items-center">
+    <h2 class="text-3xl  sm:text-4xl" > <%= user.name %> </h2>
+    <p class="absolute bottom-4 left-4 text-lg sm:text-xl">Number of Posts: <%= user.posts_counter%> </p>
   </div>   
 </div>

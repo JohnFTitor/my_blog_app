@@ -12,7 +12,7 @@
     password: "123456",
     confirmed_at: DateTime.now,
     name: "User-#{id}",
-    photo: 'https://i.pinimg.com/originals/d8/19/30/d81930b4ed6e0702d4daf02aae30b4da.png',
+    photo: 'https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png',
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut leo at diam consectetur lacinia. 
     Sed tincidunt sagittis interdum. Praesent et sollicitudin velit, nec eleifend leo. In porta quam eget libero 
     efficitur fringilla. Etiam eget ornare dolor, eget mattis sem. Nulla tempor turpis fermentum nisi faucibus 

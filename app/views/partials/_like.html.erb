@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <div class="flex absolute top-0 right-0">
+  <div class="flex sm:absolute top-0 right-0">
     <% if can? :destroy, post %>
       <%= link_to 'Delete', user_post_path(id: post.id, user_id: post.author.id), method: :delete, class: "p-5 bg-red-800 hover:bg-red-700 text-white text-xl" %>      
     <% end%>

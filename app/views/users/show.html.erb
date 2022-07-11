@@ -1,6 +1,8 @@
-<div class="flex flex-col items-center w-full gap-8 mt-5 pt-36">
-  <%= render 'partials/card', user: @user %> 
-  <div class="p-10 border-4 border-solid border-gray-900">
+<div class="flex flex-col items-center w-full gap-8">
+  <div class="w-full max-w-3xl">
+    <%= render 'partials/card', user: @user %> 
+  </div>
+  <div class="p-5 sm:p-10 border-4 border-solid border-gray-900">
     <h2 class="text-3xl mb-7" > Biography </h2>
     <p class="text-xl"> <%= @user.bio %> </p>
   </div>
@@ -9,7 +11,7 @@
       <li>
         <%= render 'partials/post_card', post: post, user: @user %>
         <% if can? :destroy, post %>
-          <%= link_to 'Delete', user_post_path(id: post.id, user_id: post.author.id), method: :delete, class: "p-5 bg-red-800 hover:bg-red-700 text-white text-xl flex items-center" %>      
+          <%= link_to 'Delete', user_post_path(id: post.id, user_id: post.author.id), method: :delete, class: "p-1 sm:p-5 bg-red-800 hover:bg-red-700 text-white text-lg sm:text-xl flex items-center" %>      
         <% end%>
       </li>
     <% end %>

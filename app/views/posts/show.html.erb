@@ -1,4 +1,4 @@
-<div class="flex flex-col w-full mt-5 pt-36">
+<div class="flex flex-col w-full">
   <% if flash[:success] %>
     <span class="absolute px-5 py-2.5 bg-green-500 text-white text-xl"> <%= flash[:success]%> </span>
   <% end %>
@@ -6,13 +6,15 @@
     <span class="absolute px-5 py-2.5 bg-red-500 text-white text-xl"> <%= flash[:error]%> </span>
   <% end %>
   <%= render 'partials/like_flash' %>
-  <div class="relative p-12 border-solid border-4 border-gray-700 w-full">
-    <h3 class="text-3xl mb-8"> <%=@post.title%> by <%= @post.author.name%> </h3>
-    <p class="text-xl"> <%= @post.text%> </p>
+  <div class="relative p-5 sm:p-12 border-solid border-4 border-gray-700 w-full">
+    <div class="flex flex-wrap justify-between items-center w-full">
+      <h3 class="text-2xl sm:text-3xl mb-8"> <%=@post.title%> by <%= @post.author.name%> </h3>
+      <%= render 'partials/like', post: @post, like: @like %>
+    </div>
+    <p class="text-xl py-5"> <%= @post.text%> </p>
     <p class="absolute right-4 bottom-4"> Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %> </p>
-    <%= render 'partials/like', post: @post, like: @like %>
   </div>
-  <div class="p-10 border-solid border-4 border-sky-700 flex flex-col gap-1">
+  <div class="p-5 sm:p-10 border-solid border-4 border-sky-700 flex flex-col gap-1">
     <%= render partial: 'partials/comment', collection: @post.comments %> 
     <%= render 'partials/comment_form', comment: @comment, post: @post %>
   </div>
